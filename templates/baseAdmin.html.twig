@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>WeTek Admin | User</title>
+		{% block stylesheets %}
+            <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+			<!-- CSS here -->
+			<link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+			<link rel="stylesheet" href="{{ asset('plugins/fullcalendar/main.css') }}">
+			<link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+		{% endblock %}
+	</head>
+	<body>
+		{% block body %}{% endblock %}
+	</body>
+    {% block javascripts %}
+				
+				<!-- Bootstrap -->
+				<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+				<!-- jQuery UI -->
+				<script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+				<!-- AdminLTE App -->
+				<script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+				<!-- fullCalendar 2.2.5 -->
+				<script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
+				<script src="{{ asset('plugins/fullcalendar/main.js') }}"></script>
+				<!-- AdminLTE for demo purposes -->
+				<script src="{{ asset('dist/js/demo.js') }}"></script>
+			{% endblock %}     
+</html>

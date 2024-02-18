@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+      <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{{ asset('img/logo/logo.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="{{ path('app_user') }}"><img src="{{ asset('img/logo/logo.png') }}" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>                                                
+                                <ul id="navigation">  
+                                    <li><a href="{{ path('app_user') }}">Acceuil</a></li>
+                                    <li><a href="shop.html">Magasin</a>
+                                        <ul class="submenu">
+                                            <li><a href="">Homme</a></li>
+                                            <li><a href="">Femme</a></li>
+                                            <li><a href="">Enfant</a></li>
+                                        </ul> 
+                                    </li>
+                                    <li><a href="">A propos</a></li>
+                                    <li class="hot"><a href="#">Nouveauté</a>
+                                        <ul class="submenu">
+                                            <li><a href="">Nos Evenement</a></li>
+                                            <li><a href="">Nouveau Produit</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Forum</a>
+                                        <ul class="submenu">
+                                            <li><a href="">Forum</a></li>
+                                            <li><a href="">Reclamation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Nous Contacter</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header Right -->
+                        <div class="header-right">
+                            <ul>
+                                <li>
+                                    <div class="nav-search search-switch">
+                                        <span class="flaticon-search"></span>
+                                    </div>
+                                </li>
+                                <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!--================login_part Area =================-->
+        <section class="login_part section_padding ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="login_part_text text-center">
+                            <div class="login_part_text_iner">
+                                <h2>Nouveau a WeTek ?</h2>
+                                <p>Merci d'avoir choisir WeTek Pour Continuer Vos achat inscrivez-vous et beneficier d'une experience innoubliable !</p>
+                                <a href="{{ path('app_user_singin') }}" class="btn_3">S'inscrire</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="login_part_form">
+                            <div class="login_part_form_iner">
+                                <h3>Bienvenue !<br>
+                                    Veuillez vous connecter</h3>
+                                     {{ form_start(form, {'attr': {'class': 'row contact_form'}}) }}
+                                    <div class="col-md-12 form-group p_star">
+                                    {{ form_widget(form.mail, {'attr': {'placeholder': 'Votre E-mail', 'class': 'form-control', 'id': 'mail', 'name':'mail' }}) }}
+                                   </div>
+                                    <div class="col-md-12 form-group p_star">
+                                    {{ form_widget(form.mdp, {'attr': {'placeholder': 'Votre Mot De Passe', 'class': 'form-control', 'id': 'mdp', 'name':'mdp'}} ) }}
+                                   </div>
+                                   {% for flashType, flashMessages in app.flashes %}
+                                        {% for flashMessage in flashMessages %}
+                                            <div class="alert alert-danger alert-dismissible fade show col-md-12" role="alert">
+                                                <strong class="d-flex justify-content-center">{{ flashMessage }}</strong>
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                   <div class="col-md-12 form-group p_star">
+                                    {{ form_widget(form.submit, {'attr': {'class': 'btn_3 text-center'} }) }}
+                                   </div>
+                                    {{ form_end(form) }} 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================login_part end =================-->
+    </main>
+{% endblock %}
+
