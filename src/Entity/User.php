@@ -43,6 +43,9 @@ class User
         return $this->id;
     }
 
+
+    /////uftcxxtxututux
+
     public function getNom(): ?string
     {
         return $this->nom;
